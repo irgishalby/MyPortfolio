@@ -1,2 +1,2 @@
 # MyPortfolio
-it is currently unfinished
+it is currently unfinished.
