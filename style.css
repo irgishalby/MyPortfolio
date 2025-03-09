@@ -1,59 +1,244 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-nav{
-    position: relative;
-    left: 0;
-    top: 0;
-    width: 1005;
-    height: 80px;
+html {
+    scroll-behavior: smooth;
 }
 
-nav a{
-    position: absolute;
-    left: 10%;
-    bottom: 1rem;
-    font-size: 1.6rem;
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+    line-height: 1.6;
 }
 
-/* Splash screen */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #e5e8eb;
+}
+
+/* Splash Screen */
 .intro {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: #161616;
-    transition: 1s;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: #161616;
+  transition: 1s;
 }
 
 .greet-header {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    color: #fff;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  color: var(--text-color);
 }
 
 .greet {
-    position: relative;
-    display: inline-block;
-    bottom: -20px;
-    opacity: 0;
+  display: inline-block;
+  position: relative;
+  bottom: -20px;
+  opacity: 0;
 }
 
-.greet.active{
-    bottom: 0;
-    opacity: 1;
-    transition: ease-in-out 0.5s;
+.greet.active {
+  bottom: 0;
+  opacity: 1;
+  transition: ease-in-out 0.5s;
 }
 
-.greet.fade{
-    bottom: 150px;
-    opacity: 0;
-    transition: ease-in-out 0.5s;
+.greet.fade {
+  bottom: 150px;
+  opacity: 0;
+  transition: ease-in-out 0.5s;
+}
+
+/* Header styles */
+header {
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: 500;
+}
+
+nav {
+    display: flex;
+    gap: 1.5rem;
+}
+
+nav a {
+    font-size: 0.9rem;
+}
+
+/* Hero section */
+.hero {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin: 4rem 0;
+}
+
+.hero-title h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.hero-description {
+    color: #ababab;
+}
+
+/* Introduction section */
+.introduction {
+    margin: 4rem 0;
+}
+
+.introduction h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.introduction p {
+    color: #ababab;
+    max-width: 600px;
+}
+
+/* Projects section */
+.projects {
+    margin: 4rem 0;
+}
+
+.projects h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    object-fit: cover;
+}
+
+.project-card h3 {
+    font-weight: 500;
+    margin-top: 0.5rem;
+}
+
+.project-card p {
+    font-size: 0.875rem;
+    color: #ababab;
+}
+
+/* Contact section */
+.contact {
+    margin: 4rem 0;
+}
+
+.contact h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.contact-card {
+    background-color: #212121;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.contact-card .icon {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.contact-card h3 {
+    font-size: 0.875rem;
+    font-weight: 500;
+}
+
+.contact-card p {
+    font-size: 0.75rem;
+    color: #ababab;
+}
+
+.phone-number h3 {
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    font-weight: normal;
+}
+
+.phone-number input {
+    width: 100%;
+    max-width: 400px;
+    background-color: #303030;
+    border: none;
+    border-radius: 0.375rem;
+    padding: 0.75rem;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+/* Media queries for responsive design */
+@media (min-width: 768px) {
+    .hero {
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+    }
+
+    .project-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .project-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
